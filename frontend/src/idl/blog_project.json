@@ -1,0 +1,60 @@
+{
+  "version": "0.1.0",
+  "name": "blog_project",
+  "instructions": [
+    {
+      "name": "createPost",
+      "accounts": [
+        { "name": "authority", "isMut": true, "isSigner": true },
+        { "name": "post", "isMut": true, "isSigner": false },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [
+        { "name": "title", "type": "string" },
+        { "name": "content", "type": "string" }
+      ]
+    },
+    {
+      "name": "updatePost",
+      "accounts": [
+        { "name": "authority", "isMut": true, "isSigner": true },
+        { "name": "post", "isMut": true, "isSigner": false }
+      ],
+      "args": [
+        { "name": "title", "type": "string" },
+        { "name": "content", "type": "string" }
+      ]
+    },
+    {
+      "name": "deletePost",
+      "accounts": [
+        { "name": "authority", "isMut": true, "isSigner": true },
+        { "name": "post", "isMut": true, "isSigner": false }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Post",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "authority", "type": "publicKey" },
+          { "name": "postId", "type": "u64" },
+          { "name": "title", "type": "string" },
+          { "name": "content", "type": "string" },
+          { "name": "createdAt", "type": "i64" },
+          { "name": "updatedAt", "type": "i64" }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    { "code": 6000, "name": "TitleTooLong", "msg": "Title is too long (max 100 characters)" },
+    { "code": 6001, "name": "ContentTooLong", "msg": "Content is too long (max 1000 characters)" },
+    { "code": 6002, "name": "TitleEmpty", "msg": "Title cannot be empty" },
+    { "code": 6003, "name": "ContentEmpty", "msg": "Content cannot be empty" },
+    { "code": 6004, "name": "Overflow", "msg": "Overflow occurred" }
+  ]
+}

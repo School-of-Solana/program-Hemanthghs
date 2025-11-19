@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { AppProviders } from '@/components/app-providers'
-import { AppLayout } from '@/components/app-layout'
 import React from 'react'
+import WalletContextProvider from '@/components/WalletContextProvider'
 
 export const metadata: Metadata = {
   title: 'Frontend',
@@ -19,9 +18,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`antialiased`}>
-        <AppProviders>
-          <AppLayout links={links}>{children}</AppLayout>
-        </AppProviders>
+        <WalletContextProvider>{children}</WalletContextProvider>
       </body>
     </html>
   )
