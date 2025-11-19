@@ -1,9 +1,3 @@
-Here is a polished, professional **README** for your **Blog Project (Solana + Markdown Editor)** — following the same style as your example.
-
-You can paste this directly into your repository.
-
----
-
 # 📝 **Blog Project — Decentralized Blogging on Solana**
 
 **Deployed Frontend URL:** *[https://solana-blog-project.vercel.app/](https://solana-blog-project.vercel.app/)*
