@@ -134,6 +134,7 @@ The project includes a full Anchor test suite covering:
 ### ▶️ Run Tests
 
 ```bash
+cd blog_project
 pnpm install
 anchor test
 ```
