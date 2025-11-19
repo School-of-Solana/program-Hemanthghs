@@ -4,11 +4,11 @@ You can paste this directly into your repository.
 
 ---
 
-# 📝 **Blog Project — Decentralized Markdown Blogging on Solana**
+# 📝 **Blog Project — Decentralized Blogging on Solana**
 
 **Deployed Frontend URL:** *[https://solana-blog-project.vercel.app/](https://solana-blog-project.vercel.app/)*
 
-**Solana Program ID:** *FVsq9TLQforiou9dxDT6XgdbRBF7H9fZpkiVPvrdarkx*
+**Solana Program ID:** ```FVsq9TLQforiou9dxDT6XgdbRBF7H9fZpkiVPvrdarkx```
 
 **Deployed on:** *Solana-Devnet*
 
@@ -140,7 +140,7 @@ The project includes a full Anchor test suite covering:
 ### ▶️ Run Tests
 
 ```bash
-yarn install
+pnpm install
 anchor test
 ```
 
@@ -177,6 +177,68 @@ anchor test
 * Solana Wallet Adapter
 * TypeScript
 * Modal dialogs + custom UI components
+
+---
+
+Here is a clean, professional **Frontend Running Instructions** section you can paste directly into your README:
+
+---
+
+## 🖥️ Frontend — Running Instructions
+
+### 📦 Install Dependencies
+
+Go to the `frontend` folder:
+
+```bash
+cd frontend
+```
+
+Install packages (choose any one):
+
+```bash
+yarn install
+# or
+pnpm install
+# or
+npm install
+```
+
+---
+
+### 🚀 Development Server
+
+Start the local development server:
+
+```bash
+npm run dev
+```
+
+The app will be available at:
+
+```
+http://localhost:3000
+```
+
+---
+
+### 🏗 Build for Production
+
+Generate a production build:
+
+```bash
+npm run build
+```
+
+---
+
+### ▶️ Start Production Server
+
+After building:
+
+```bash
+npm run start
+```
 
 ---
 

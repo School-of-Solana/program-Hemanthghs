@@ -10,6 +10,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import Snackbar from '@/components/Snackbar'
 import { formatDistanceToNow } from 'date-fns'
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 
 const PROGRAM_ID = new PublicKey('FVsq9TLQforiou9dxDT6XgdbRBF7H9fZpkiVPvrdarkx')
 
@@ -207,6 +208,9 @@ export default function BlogApp() {
     return (
       <div className="p-6 text-center border border-gray-800 rounded-xl bg-gray-900 text-gray-200">
         <h2 className="text-lg font-semibold">Connect your wallet</h2>
+        <div className="mt-4 rounded-xl">
+          <WalletMultiButton />
+        </div>
       </div>
     )
   }
