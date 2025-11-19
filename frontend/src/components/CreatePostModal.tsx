@@ -57,7 +57,11 @@ export default function CreatePostModal({
 
           {/* Markdown Preview */}
           <div className="bg-gray-800 border border-gray-700 rounded-lg p-4 h-80 overflow-auto text-gray-200 prose prose-invert max-w-none">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content || '_Live preview will appear here..._'}</ReactMarkdown>
+            <div className="markdown-body">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {content || '_Live preview will appear here..._'}
+              </ReactMarkdown>
+            </div>
           </div>
         </div>
 

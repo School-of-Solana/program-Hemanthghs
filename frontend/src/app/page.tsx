@@ -25,7 +25,6 @@ export default function BlogApp() {
 
   const [loading, setLoading] = useState(false)
 
-  const [message, setMessage] = useState('')
   const [snackbar, setSnackbar] = useState('')
 
   const [title, setTitle] = useState('')
@@ -153,13 +152,13 @@ export default function BlogApp() {
         })
         .rpc()
 
-      setMessage('✅ Updated successfully!')
+      setSnackbar('✅ Updated successfully!')
       setEditPost(null)
       setEditContent('')
       await loadMyPosts()
       await loadAllPosts()
     } catch (err: any) {
-      setMessage(`❌ Error updating post ${err?.message}`)
+      setSnackbar(`❌ Error updating post ${err?.message}`)
     }
 
     setLoadingUpdateKey(null)
@@ -181,11 +180,11 @@ export default function BlogApp() {
         })
         .rpc()
 
-      setMessage('✅ Deleted successfully!')
+      setSnackbar('✅ Deleted successfully!')
       await loadMyPosts()
       await loadAllPosts()
     } catch (err: any) {
-      setMessage(`❌ Error deleting post ${err?.message}`)
+      setSnackbar(`❌ Error deleting post ${err?.message}`)
     }
 
     setLoadingDeleteKey(null)
@@ -240,7 +239,9 @@ export default function BlogApp() {
         </div>
 
         <div className="prose prose-invert prose-lg max-w-none text-gray-300 mb-6">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content || ''}</ReactMarkdown>
+          <div className="markdown-body">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content || '_Live preview will appear here..._'}</ReactMarkdown>
+          </div>
         </div>
 
         {showActions && (
@@ -327,19 +328,6 @@ export default function BlogApp() {
               My Posts
             </button>
           </div>
-
-          {/* Status */}
-          {message && (
-            <div
-              className={`mb-8 p-5 rounded-xl text-lg font-medium ${
-                message.includes('❌')
-                  ? 'bg-rose-900/30 text-rose-400 border border-rose-800'
-                  : 'bg-emerald-900/30 text-emerald-400 border border-emerald-800'
-              }`}
-            >
-              {message}
-            </div>
-          )}
 
           {/* Posts */}
           {tab === 'posts' && (
